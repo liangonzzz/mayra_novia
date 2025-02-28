@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/porta.png" type="image/x-icon" />
+    <title>Mi Novia Hermosa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Main Content -->
+        <section class="container">
+            <nav class="navbar">
+                <div class="navbar__content">
+                    <img src="./images/logo.png" alt="Logo">
+                    <ul>
+                        <li><a href="https://mayyy.vercel.app/">Guapa</a></li>
+                        <li><a href="/">Hermosa</a></li>
+                        <li><a href="/">Linda</a></li>
+                        <li><a href="/">Reina</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <section class="main-content">
+                <p>Te Amo</p>
+                <h1>Montonesss!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, tempore officiis? Facere temporibus excepturi dolorem, commodi hic alias provident iste consequatur, quam error ullam quo dolor maxime laboriosam fuga. Quis?</p>
+            </section>
+
+            <aside class="side-content">
+                <p>Mayra</p>
+                <img src="./images/principal.png" alt="Mocha">
+                <div></div> <!-- 🌸 Cuadro rosa restaurado -->
+            </aside>
+
+            <!-- Footer con botones -->
+            <footer class="footer">
+                <div id="button1">
+                    <img src="./images/grande1.png" alt="Mocha" style="width: 200px; height: auto;">
+                    <span class="names">Mayraaa</span>
+                </div>
+                <div id="button2">
+                    <img src="./images/media1.png" alt="Mocha" style="width: 180px; height: auto;">
+                    <span class="names">Alejitaaa</span>
+                    <span class="nama">Cristancho</span>
+                </div>
+                <div id="button3">
+                    <img src="./images/bebe1.png" alt="Mocha" style="width: 100px; height: auto;">
+                    <span class="names">Mayritaaa</span>
+                    <span class="nama">Bebe</span>
+                </div>
+            </footer>
+        </section>
+
+        <!-- Loader -->
+        <section class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+        <!-- Modal -->
+        <section class="modal hidden">
+            <div class="modal-content">
+                <img class="modal-content__close" src="https://img.icons8.com/windows/32/000000/macos-close.png"
+                    alt="Cerrar" />
+
+                <div class="modal-content__slider">
+                    <input type="radio" name="slider-1" id="radio-1" checked>
+                    <input type="radio" name="slider-1" id="radio-2">
+                    <input type="radio" name="slider-1" id="radio-3">
+
+                    <div class="cards">
+                        <label class="card" for="radio-1" id="card-1">
+                            <img>
+                        </label>
+                        <label class="card" for="radio-2" id="card-2">
+                            <img>
+                        </label>
+                        <label class="card" for="radio-3" id="card-3">
+                            <img>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="modal-content__button">Hermosa mi Amor!</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const closeIcon = document.querySelector('.modal-content__close');
+
+        const button1 = document.querySelector('#button1');
+        const button2 = document.querySelector('#button2');
+        const button3 = document.querySelector('#button3');
+
+        // Seleccionamos las imágenes dentro del slider
+        const sliderImages = document.querySelectorAll('.cards img');
+
+        // Definir los conjuntos de imágenes para cada botón
+        const imagesSet = {
+            button1: ["./images/grande2.png", "./images/grande3.png", "./images/grande4.png"],
+            button2: ["./images/media2.png", "./images/media3.png", "./images/media4.png"],
+            button3: ["./images/bebe2.png", "./images/bebe3.png", "./images/bebe4.png"]
+        };
+
+        function openModal(images) {
+            modal.classList.remove('hidden');
+            modal.classList.add('visible');
+
+            // Cambiar las imágenes del slider dinámicamente
+            sliderImages.forEach((img, index) => {
+                if (images[index]) {
+                    img.src = images[index];
+                }
+            });
+        }
+
+        button1.addEventListener('click', () => openModal(imagesSet.button1));
+        button2.addEventListener('click', () => openModal(imagesSet.button2));
+        button3.addEventListener('click', () => openModal(imagesSet.button3));
+
+        closeIcon.addEventListener('click', () => {
+            modal.classList.remove('visible');
+            modal.classList.add('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
